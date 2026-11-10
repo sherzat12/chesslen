@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Шахматы 9×9</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="app">
+    <h1>Шахматы 9×9</h1>
+
+    <div class="game">
+      <div class="board-wrap">
+        <div id="board" class="board" role="grid" aria-label="Шахматная доска 9 на 9"></div>
+      </div>
+
+      <aside class="panel">
+        <div id="status" class="status" aria-live="polite"></div>
+
+        <div class="controls">
+          <label>Режим
+            <select id="mode">
+              <option value="two">Два игрока</option>
+              <option value="ai">Против компьютера</option>
+            </select>
+          </label>
+          <label id="side-wrap" hidden>Вы играете за
+            <select id="side">
+              <option value="w">белых</option>
+              <option value="b">чёрных</option>
+            </select>
+          </label>
+          <label id="level-wrap" hidden>Сложность
+            <select id="level">
+              <option value="1">Лёгкая</option>
+              <option value="2" selected>Средняя</option>
+              <option value="3">Сильная</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="buttons">
+          <button id="btn-new" type="button">Новая игра</button>
+          <button id="btn-undo" type="button">Отменить ход</button>
+          <button id="btn-flip" type="button">Перевернуть</button>
+        </div>
+
+        <div class="captured">
+          <div><span class="label">Взяли белые:</span> <span id="cap-w" class="cap-list"></span></div>
+          <div><span class="label">Взяли чёрные:</span> <span id="cap-b" class="cap-list"></span></div>
+        </div>
+
+        <h2>Ходы</h2>
+        <div id="moves" class="moves"></div>
+      </aside>
+    </div>
+  </main>
+
+  <div id="promo" class="overlay" hidden>
+    <div class="promo-box" role="dialog" aria-label="Выберите фигуру для превращения пешки">
+      <p>Превращение пешки</p>
+      <div id="promo-choices" class="promo-choices"></div>
+    </div>
+  </div>
+
+  <script src="js/engine.js"></script>
+  <script src="js/ai.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

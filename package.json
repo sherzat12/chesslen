@@ -1,0 +1,11 @@
+{
+  "name": "chesslen",
+  "version": "1.0.0",
+  "description": "Шахматы на доске 9x9: два игрока или игра против компьютера",
+  "private": true,
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "start": "npx --yes serve ."
+  },
+  "license": "MIT"
+}
